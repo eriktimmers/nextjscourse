@@ -8,7 +8,7 @@ interface Props {
 
 const UserDetailPage = ({ params: { id } }: Props) => {
     return (
-        <div>User {id}</div>
+        <div>User: {id}</div>
     );
 };
 
