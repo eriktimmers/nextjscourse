@@ -10,9 +10,9 @@ export function GET(
     // otherwise: data
 
     if (params.id > 10)
-        return NextResponse.json({ error: 'User not found'}, { status: 404 } );
+        return NextResponse.json({ error: 'product not found'}, { status: 404 } );
 
-    return NextResponse.json({ id: 1, name: 'Erik' });
+    return NextResponse.json({ id: 1, name: 'Vla', price: 2.95 });
 }
 
 export async function PUT(
@@ -32,7 +32,7 @@ export async function PUT(
         return NextResponse.json({ error: 'I\'m a teapot'}, { status: 418 } );
 
     return NextResponse.json(
-        { id: 1, name: body.name }
+        { id: 1, name: body.name, price: body.price }
     );
 }
 
@@ -41,7 +41,7 @@ export async function DELETE(
     { params }: {params: { id: number; }} )
 {
     if (params.id > 10)
-        return NextResponse.json({ error: 'User not found'}, { status: 404 } );
+        return NextResponse.json({ error: 'Product not found'}, { status: 404 } );
 
     return NextResponse.json(
         {  }
