@@ -1,17 +1,17 @@
-import Image from 'next/image'
-import Link from 'next/link';
-import ProductCard from "./components/ProductCard";
-import {getServerSession} from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import Image from 'next/image';
+import coffie from '@/public/images/A_cup_of_coffee wide.png';
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
-
   return (
-      <main>
-          <h1>Buenos Dias, { session && <span>{session.user!.name}</span> }</h1>
-          <Link href="/users">Users</Link>
-          <ProductCard />
+      <main className={"relative h-screen"}>
+        <Image src="https://picsum.photos/id/280/500/700.jpg"
+               alt="Pebbles"
+               fill
+               className="object-cover"
+               sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+               quality={75}
+               priority
+        />
       </main>
   )
 }
